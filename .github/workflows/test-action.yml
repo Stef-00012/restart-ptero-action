@@ -1,0 +1,17 @@
+name: Test Action
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test-action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Stef-00012/restart-ptero-action@main
+        with:
+          PTERO_PANEL_URL: ${{ secrets.PTERO_PANEL_URL }}
+          PTERO_PANEL_TOKEN: ${{ secrets.PTERO_PANEL_TOKEN }}
+          PTERO_PANEL_SERVER_ID: ${{ secrets.PTERO_PANEL_SERVER_ID }}

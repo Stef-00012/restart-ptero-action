@@ -1,0 +1,17 @@
+name: 'Restart Pterodactyl Server'
+description: 'Restarts the specified pterodactyl server'
+
+inputs:
+  PTERO_PANEL_URL:
+    description: "The pterodactyl panel URL"
+    required: true
+  PTERO_PANEL_TOKEN:
+    description: "The pterodactyl panel API token"
+    required: true
+  PTERO_PANEL_SERVER_ID:
+    description: "The ID of the server to restart"
+    required: true
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
