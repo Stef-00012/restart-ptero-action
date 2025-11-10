@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: Stef-00012/restart-ptero-action@main
+      - uses: https://git.stefdp.com/Stef/restart-ptero-action@main
         with:
           PTERO_PANEL_URL: ${{ secrets.PTERO_PANEL_URL }}
           PTERO_PANEL_TOKEN: ${{ secrets.PTERO_PANEL_TOKEN }}
