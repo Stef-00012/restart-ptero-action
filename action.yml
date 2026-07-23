@@ -11,6 +11,15 @@ inputs:
   PTERO_PANEL_SERVER_ID:
     description: "The ID of the server to restart"
     required: true
+  PRE_RESTART_COMMAND:
+    description: "A command to run before the server restarts"
+    required: false
+  RESTART_DELAY:
+    description: "The delay in seconds before the server restarts"
+    required: false
+  PRE_RESTART_COMMAND_STOP_ON_ERROR:
+    description: "Whether to stop the workflow if the pre-restart command fails"
+    required: false
 
 runs:
   using: 'node20'
