@@ -15,22 +15,30 @@ const stopOnError = core.getInput("PRE_RESTART_COMMAND_STOP_ON_ERROR") === "true
 if (!panelUrl) {
 	core.error("Missing Pterodactyl Panel URL");
 	
+	core.setFailed(1);
+
 	process.exit(1);
 }
 if (!apiToken) {
 	core.error("Missing Pterodactyl API Token");
 	
+	core.setFailed(1);
+
 	process.exit(1);
 }
 if (!serverId) {
 	core.error("Missing Pterodactyl Server ID");
 	
+	core.setFailed(1);
+
 	process.exit(1);
 }
 
 if (restartDelay && (Number.isNaN(restartDelayInt) || restartDelayInt <= 0)) {
 	core.error("Restart delay must be a non-negative integer");
 	
+	core.setFailed(1);
+
 	process.exit(1);
 }
 
@@ -59,6 +67,8 @@ async function main() {
 					core.error(`Failed to execute command <${command}>. HTTP code ${res.status}. Message: ${errorMessage}`);
 
 					if (stopOnError) {
+						core.setFailed(1);
+
 						process.exit(1);
 					}
 				}
@@ -66,6 +76,8 @@ async function main() {
 				core.error(`Error while executing command <${command}>: ${e.message}`);
 
 				if (stopOnError) {
+					core.setFailed(1);
+
 					process.exit(1);
 				}
 			}
@@ -98,11 +110,15 @@ async function main() {
 
 		core.error(`Something went wrong while sending the request, HTTP code ${res.status}. Message: ${errorMessage}`);
 
+		core.setFailed(1);
+
 		process.exit(1);
 	} catch(e) {
 		core.error(
 			`Something went wrong while sending the request. Message: ${e.message}`,
 		);
+
+		core.setFailed(1);
 
 		process.exit(1);
 	}
