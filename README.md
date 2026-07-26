@@ -87,6 +87,6 @@ Then use one of the examples [above](#usage) in yout github action with that API
 
 You will only have access to 1 server with the following ID: `8a66c849`.
 
-You can see a working example [here](https://git.stefdp.com/Stef/restart-ptero-action/src/branch/main/.forgejo/workflows/test-action.yml).
+You can see a working example [here](https://git.stefdp.com/Stef/restart-ptero-action/src/branch/main/.forgejo/workflows/test-action.yml) and [here](https://git.stefdp.com/Stef/restart-ptero-action/actions/runs/2/jobs/0/attempt/1) is where it actually ran.
 
 [^1]: Please do not change the password
