@@ -3,22 +3,22 @@ description: 'Restarts the specified pterodactyl server'
 
 inputs:
   PTERO_PANEL_URL:
-    description: "The pterodactyl panel URL"
+    description: "The Pterodactyl panel URL"
     required: true
   PTERO_PANEL_TOKEN:
-    description: "The pterodactyl panel API token"
+    description: "The Pterodactyl panel API token"
     required: true
   PTERO_PANEL_SERVER_ID:
     description: "The ID of the server to restart"
     required: true
-  PRE_RESTART_COMMAND:
-    description: "A command to run before the server restarts"
+  PRE_RESTART_COMMANDS:
+    description: "Commands to run before the server restarts, separated by newlines"
     required: false
   RESTART_DELAY:
     description: "The delay in seconds before the server restarts"
     required: false
   PRE_RESTART_COMMAND_STOP_ON_ERROR:
-    description: "Whether to stop the workflow if the pre-restart command fails"
+    description: "Whether to stop the workflow if any of the pre-restart commands fail"
     required: false
 
 runs:

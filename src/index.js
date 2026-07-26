@@ -3,7 +3,11 @@ const core = require("@actions/core");
 const panelUrl = core.getInput("PTERO_PANEL_URL");
 const apiToken = core.getInput("PTERO_PANEL_TOKEN");
 const serverId = core.getInput("PTERO_PANEL_SERVER_ID");
-const preRestartCommand = core.getInput("PRE_RESTART_COMMAND");
+const preRestartCommands = core.getInput("PRE_RESTART_COMMANDS");
+const preRestartCommandsList = preRestartCommands
+	.split("\n")
+	.map((command) => command.trim())
+	.filter((command) => command.length > 0);
 const restartDelay = core.getInput("RESTART_DELAY");
 const restartDelayInt = parseInt(restartDelay, 10);
 const stopOnError = core.getInput("PRE_RESTART_COMMAND_STOP_ON_ERROR") === "true";
@@ -33,35 +37,37 @@ if (restartDelay && (Number.isNaN(restartDelayInt) || restartDelayInt <= 0)) {
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 async function main() {
-	if (preRestartCommand) {
-		try {
-			core.info("Running pre-restart command...");
+	if (preRestartCommands && preRestartCommandsList.length > 0) {
+		for (const command of preRestartCommandsList) {
+			try {
+				core.info(`Running command: <${command}>`);
 
-			const res = await fetch(`${panelUrl}/api/client/servers/${serverId}/command`, {
-				method: "POST",
-				headers: {
-					"Content-type": "application/json",
-					Authorization: `Bearer ${apiToken}`,
-				},
-				body: JSON.stringify({
-					command: preRestartCommand,
-				}),
-			})
+				const res = await fetch(`${panelUrl}/api/client/servers/${serverId}/command`, {
+					method: "POST",
+					headers: {
+						"Content-type": "application/json",
+						Authorization: `Bearer ${apiToken}`,
+					},
+					body: JSON.stringify({
+						command: command,
+					}),
+				})
 
-			if (!res.ok) {
-				const errorMessage = await res.text();
+				if (!res.ok) {
+					const errorMessage = await res.text();
 
-				core.error(`Failed to execute pre-restart command. HTTP code ${res.status}. Message: ${errorMessage}`);
+					core.error(`Failed to execute command <${command}>. HTTP code ${res.status}. Message: ${errorMessage}`);
+
+					if (stopOnError) {
+						process.exit(1);
+					}
+				}
+			} catch(e) {
+				core.error(`Error while executing command <${command}>: ${e.message}`);
 
 				if (stopOnError) {
 					process.exit(1);
 				}
-			}
-		} catch(e) {
-			core.error(`Error while executing pre-restart command: ${e.message}`);
-
-			if (stopOnError) {
-				process.exit(1);
 			}
 		}
 	}
