@@ -4,7 +4,7 @@ on: workflow_dispatch
 
 jobs:
   test-action:
-    runs-on: ubuntu-latest
+    runs-on: node
     steps:
       - uses: actions/checkout@v4
       - uses: https://git.stefdp.com/Stef/restart-ptero-action@main
