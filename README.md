@@ -81,6 +81,6 @@ First login in my panel with the following credentials:
 
 Then visit [`https://panel.stefdp.com/account/api`](https://panel.stefdp.com/account/api) and create an API key.
 
-Then use one of the examples [above](#Usage) in yout github action with that API key.
+Then use one of the examples [above](#usage) in yout github action with that API key.
 
 You will only have access to 1 server with the following ID: `8a66c849`.
