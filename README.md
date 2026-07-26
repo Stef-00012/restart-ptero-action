@@ -1,4 +1,4 @@
-# restart Ptero Action
+# Restart Ptero Action
 
 A GitHub action to restart your Pterodactyl Panel servers
 
