@@ -86,3 +86,5 @@ Then visit [`https://panel.stefdp.com/account/api`](https://panel.stefdp.com/acc
 Then use one of the examples [above](#usage) in yout github action with that API key.
 
 You will only have access to 1 server with the following ID: `8a66c849`.
+
+You can see a working example [here](https://git.stefdp.com/Stef/restart-ptero-action/src/branch/main/.forgejo/workflows/test-action.yml).
