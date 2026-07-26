@@ -76,7 +76,7 @@ First login in my panel with the following credentials:
 
 - URL: `https://panel.stefdp.com`
 - Email: `stardance@stefdp.com`
-- Password: `p&7J1FVfB4*AIuf2m!^*7zGN`
+- Password: `p&7J1FVfB4*AIuf2m!^*7zGN` [^1]
 
 > [!WARNING]
 > Please read the disclaimer in the server's console
@@ -88,3 +88,5 @@ Then use one of the examples [above](#usage) in yout github action with that API
 You will only have access to 1 server with the following ID: `8a66c849`.
 
 You can see a working example [here](https://git.stefdp.com/Stef/restart-ptero-action/src/branch/main/.forgejo/workflows/test-action.yml).
+
+[^1]: Please do not change the password
