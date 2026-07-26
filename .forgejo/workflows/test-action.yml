@@ -12,3 +12,8 @@ jobs:
           PTERO_PANEL_URL: ${{ secrets.PTERO_PANEL_URL }}
           PTERO_PANEL_TOKEN: ${{ secrets.PTERO_PANEL_TOKEN }}
           PTERO_PANEL_SERVER_ID: ${{ secrets.PTERO_PANEL_SERVER_ID }}
+          RESTART_DELAY: "5"
+          PRE_RESTART_COMMANDS: |
+            echo "my message"
+            ls
+            cat myFile.txt
