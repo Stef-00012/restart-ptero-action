@@ -6,10 +6,13 @@ A GitHub action to restart your Pterodactyl Panel servers.
 
 # Usage
 
+> [!NOTE]
+> If you are using a self-hosted git instance, the `runs-on` field should be `https://git.stefdp.com/Stef/restart-ptero-action@main`
+
 Inside `steps`:
 
 ```yml
-- uses: https://git.stefdp.com/Stef/restart-ptero-action@main
+- uses: Stef-00012/restart-ptero-action@main
   with:
     PTERO_PANEL_URL: ${{ secrets.PTERO_PANEL_URL }}
     PTERO_PANEL_TOKEN: ${{ secrets.PTERO_PANEL_TOKEN }}
@@ -28,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: https://git.stefdp.com/Stef/restart-ptero-action@main
+      - uses: Stef-00012/restart-ptero-action@main
         with:
           PTERO_PANEL_URL: ${{ secrets.PTERO_PANEL_URL }}
           PTERO_PANEL_TOKEN: ${{ secrets.PTERO_PANEL_TOKEN }}
@@ -51,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: https://git.stefdp.com/Stef/restart-ptero-action@main
+      - uses: Stef-00012/restart-ptero-action@main@main
         with:
           PTERO_PANEL_URL: ${{ secrets.PTERO_PANEL_URL }}
           PTERO_PANEL_TOKEN: ${{ secrets.PTERO_PANEL_TOKEN }}
@@ -86,6 +89,9 @@ Then visit [`https://panel.stefdp.com/account/api`](https://panel.stefdp.com/acc
 Then use one of the examples [above](#usage) in yout github action with that API key.
 
 You will only have access to 1 server with the following ID: `8a66c849`.
+
+> [!NOTE]
+> In the example action below I am using my own runner called `node`, if you use it on github, you must change the `runs-on` value to `ubuntu-latest` (or any runner with nodejs)
 
 You can see a working example [here](https://git.stefdp.com/Stef/restart-ptero-action/src/branch/main/.forgejo/workflows/test-action.yml) and [here](https://git.stefdp.com/Stef/restart-ptero-action/actions/runs/2/jobs/0/attempt/1) is where it actually ran.
 
