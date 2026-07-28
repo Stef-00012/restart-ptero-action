@@ -7,7 +7,9 @@ A GitHub action to restart your Pterodactyl Panel servers.
 # Usage
 
 > [!NOTE]
-> If you are using a self-hosted git instance, the `runs-on` field should be `https://git.stefdp.com/Stef/restart-ptero-action@main`
+> If you are using a self-hosted git instance:
+> - the `uses` field should be `https://git.stefdp.com/Stef/restart-ptero-action@main`
+> - the `runs-on` field should be the label of your own runner
 
 Inside `steps`:
 
