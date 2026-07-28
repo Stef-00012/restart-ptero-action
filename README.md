@@ -64,6 +64,9 @@ jobs:
 
 ## Variables
 
+> [!NOTE]
+> on GitHub these variables go in Settings > Secrets and variables > Actions > Repository secrets
+
 | Variable | Required | Description | Example | Default |
 |    :-:   |    :-:   |     :-:     |   :-:   |   :-:   |
 | `PTERO_PANEL_URL` | Yes | Server URL of your Pterodactyl Panel (Including the scheme, `http://` or `https://`) | `https://panel.example.com` | N/A |
