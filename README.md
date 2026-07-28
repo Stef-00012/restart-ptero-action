@@ -56,7 +56,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: Stef-00012/restart-ptero-action@main@main
+      - uses: Stef-00012/restart-ptero-action@main
         with:
           PTERO_PANEL_URL: ${{ secrets.PTERO_PANEL_URL }}
           PTERO_PANEL_TOKEN: ${{ secrets.PTERO_PANEL_TOKEN }}
@@ -96,7 +96,7 @@ Then use one of the examples [above](#usage) in yout github action with that API
 You will only have access to 1 server with the following ID: `8a66c849`.
 
 > [!NOTE]
-> In the example action below I am using my own runner called `node`, if you use it on github, you must change the `runs-on` value to `ubuntu-latest` (or any runner with nodejs)
+> In the example action below I am using my own runner called `node`, if you use it on GitHub, you must change the `runs-on` field to `ubuntu-latest` (or any runner with nodejs) and the `uses` field to `Stef-00012/restart-ptero-action@main`
 
 You can see a working example [here](https://git.stefdp.com/Stef/restart-ptero-action/src/branch/main/.forgejo/workflows/test-action.yml) and [here](https://git.stefdp.com/Stef/restart-ptero-action/actions/runs/2/jobs/0/attempt/1) is where it actually ran.
 
