@@ -1,4 +1,4 @@
-name: Test Action
+name: Test Action Git
 
 on: workflow_dispatch
 
