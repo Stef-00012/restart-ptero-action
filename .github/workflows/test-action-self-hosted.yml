@@ -1,4 +1,4 @@
-name: Test Action
+name: Test Action Self-Hosted
 
 on: workflow_dispatch
 

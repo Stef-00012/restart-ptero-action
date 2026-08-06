@@ -6,10 +6,15 @@ A GitHub action to restart your Pterodactyl Panel servers.
 
 # Usage
 
+> [!NOTE]
+> If you are using a self-hosted git instance:
+> - the `uses` field should be `https://git.stefdp.com/Stef/restart-ptero-action@main`
+> - the `runs-on` field should be the label of your own runner
+
 Inside `steps`:
 
 ```yml
-- uses: https://git.stefdp.com/Stef/restart-ptero-action@main
+- uses: Stef-00012/restart-ptero-action@main
   with:
     PTERO_PANEL_URL: ${{ secrets.PTERO_PANEL_URL }}
     PTERO_PANEL_TOKEN: ${{ secrets.PTERO_PANEL_TOKEN }}
@@ -28,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: https://git.stefdp.com/Stef/restart-ptero-action@main
+      - uses: Stef-00012/restart-ptero-action@main
         with:
           PTERO_PANEL_URL: ${{ secrets.PTERO_PANEL_URL }}
           PTERO_PANEL_TOKEN: ${{ secrets.PTERO_PANEL_TOKEN }}
@@ -51,7 +56,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: https://git.stefdp.com/Stef/restart-ptero-action@main
+      - uses: Stef-00012/restart-ptero-action@main
         with:
           PTERO_PANEL_URL: ${{ secrets.PTERO_PANEL_URL }}
           PTERO_PANEL_TOKEN: ${{ secrets.PTERO_PANEL_TOKEN }}
@@ -60,6 +65,9 @@ jobs:
 ```
 
 ## Variables
+
+> [!NOTE]
+> on GitHub these variables go in Settings > Secrets and variables > Actions > Repository secrets
 
 | Variable | Required | Description | Example | Default |
 |    :-:   |    :-:   |     :-:     |   :-:   |   :-:   |
