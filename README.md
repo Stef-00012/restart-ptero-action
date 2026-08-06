@@ -14,7 +14,7 @@ A GitHub action to restart your Pterodactyl Panel servers.
 Inside `steps`:
 
 ```yml
-- uses: Stef-00012/restart-ptero-action@main
+- uses: Stef-DP/restart-ptero-action@main
   with:
     PTERO_PANEL_URL: ${{ secrets.PTERO_PANEL_URL }}
     PTERO_PANEL_TOKEN: ${{ secrets.PTERO_PANEL_TOKEN }}
@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: Stef-00012/restart-ptero-action@main
+      - uses: Stef-DP/restart-ptero-action@main
         with:
           PTERO_PANEL_URL: ${{ secrets.PTERO_PANEL_URL }}
           PTERO_PANEL_TOKEN: ${{ secrets.PTERO_PANEL_TOKEN }}
@@ -56,7 +56,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: Stef-00012/restart-ptero-action@main
+      - uses: Stef-DP/restart-ptero-action@main
         with:
           PTERO_PANEL_URL: ${{ secrets.PTERO_PANEL_URL }}
           PTERO_PANEL_TOKEN: ${{ secrets.PTERO_PANEL_TOKEN }}
