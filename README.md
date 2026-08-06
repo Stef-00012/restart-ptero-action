@@ -69,24 +69,3 @@ jobs:
 | `PRE_RESTART_COMMANDS` | No | Commands to run on the server before restarting it (split by new line) | `echo "hello world"` | N/A (no command) |
 | `RESTART_DELAY` | No | Amount of seconds to wait before restarting the server (useful with `PRE_RESTART_COMMAND`) | `5` | N/A (no delay) |
 | `PRE_RESTART_COMMAND_STOP_ON_ERROR` | No | Whether to restart the server if the command HTTP request fails (**NOTE**: This is only for the HTTP request, it won't stop if the command fails as the API doesn't say if the command succeeds or not) | `true` | `false` |
-
-# Stardance Demo
-
-First login in my panel with the following credentials:
-
-- URL: `https://panel.stefdp.com`
-- Email: `stardance@stefdp.com`
-- Password: `p&7J1FVfB4*AIuf2m!^*7zGN` [^1]
-
-> [!WARNING]
-> Please read the disclaimer in the server's console
-
-Then visit [`https://panel.stefdp.com/account/api`](https://panel.stefdp.com/account/api) and create an API key.
-
-Then use one of the examples [above](#usage) in yout github action with that API key.
-
-You will only have access to 1 server with the following ID: `8a66c849`.
-
-You can see a working example [here](https://git.stefdp.com/Stef/restart-ptero-action/src/branch/main/.forgejo/workflows/test-action.yml) and [here](https://git.stefdp.com/Stef/restart-ptero-action/actions/runs/2/jobs/0/attempt/1) is where it actually ran.
-
-[^1]: Please do not change the password
